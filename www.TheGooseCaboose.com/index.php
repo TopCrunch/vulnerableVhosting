@@ -6,7 +6,7 @@ session_start();
 $servername = "localhost";
 $username = "admin";
 $password = "notagoodpassword";
-$dbname = "your_database";
+$dbname = "goose";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -46,18 +46,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
-
+    
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         // Verify hashed password
-        if (password_verify($password, $row['password'])) {
+        if (strcmp($password, $row['password']) == 0) {
             echo "Login successful!";
             // Additional logic for a successful login
+            $_SESSION['logged_in'] = 1;
+            include("home.php");
         } else {
-            echo "Invalid password.";
+            echo "Invalid user/password";
         }
     } else {
-        echo "User not found.";
+        echo "Invalid user/password";
     }
 
     $stmt->close();
