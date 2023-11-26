@@ -72,23 +72,46 @@ $conn->close();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Secure PHP Website</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Goose Caboose Camping Apparel</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <h1>Welcome to One of The Safe PHP Websites</h1>
+    <nav>
+        <div class="logo">Goose Caboose</div>
+        <div class="nav-items">
+            <a href="/">Camp & Hike</a>
+            <a href="/">Water</a>
+            <a href="/">Men</a>
+            <a href="/">Women</a>
+            <a href="/">Kids</a>
+        </div>
+    </nav>
+    <section class="main">
+        <div class="main-container">
+            <div class="column-middle">
+                <h1>SHOP OUR END OF THE YEAR SALE</h1>
+                <p>
+                    Deals on Rain Gear, Jackets, Tents, & more! Login to access exclusive discounts, sale prices
+                    available for members only.
+                </p>
+                <div class="logins">
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" required>
 
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required>
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" required>
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" required>
-
-        <input type="hidden" name="csrf_token" value="<?php echo generateCSRFToken(); ?>">
-
-        <button type="submit">Login</button>
-    </form>
+                        <input type="hidden" name="csrf_token" value="<?php echo generateCSRFToken(); ?>">
+                        <br>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+                <img src="./camping_photo_V2.svg" alt="photo of a camper" class="main-image"/>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
