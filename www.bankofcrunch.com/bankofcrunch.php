@@ -52,16 +52,62 @@ $conn->close();
     <title>Bank of Crunch</title>
     <style>
         /* Set the background image */
+        * {
+            margin: 0;
+            padding-top: 0;
+            box-sizing: border-box;
+            font-family: "TradeGothic", Helvetica, Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.15;
+            color: black;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            background: white;
+            box-sizing: border-box;
+        }
+
+        .nav1 {
+            position: fixed;
+            top: 115px;
+            left: 0;
+            width: 100%;
+            padding: 25px 100px;
+            background: #EEEEEE;
+            box-sizing: border-box;
+        }
+
+        .nav2 {
+            position: fixed;
+            top: 165px;
+            left: 0;
+            width: 100%;
+            padding: 25px 100px;
+            background: #00395D;
+            box-sizing: border-box;
+        }
+
+        .logo-image{
+            max-width: 480px;
+            max-height: 100vh;
+            margin: auto;
+        }
+
         body, html {
             height: 100%;
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            -webkit-font-smoothing: antialiased;
         }
 
         .bg {
             /* The image used */
-            background-image: url('Background.png');
+            background-image: url("/pexels-nout-gons-378570.jpg");
 
             /* Full height */
             height: 100%;
@@ -79,6 +125,7 @@ $conn->close();
 
         /* Container holding the form */
         .login-container {
+            position: absolute;
             background: rgba(255, 255, 255, 0.9); /* White background with a little transparency */
             padding: 40px;
             border-radius: 10px;
@@ -107,7 +154,7 @@ $conn->close();
         }
 
         button {
-            background-color: #007aff;
+            background-color: #00395D;
             color: white;
             padding: 10px;
             border: none;
@@ -129,13 +176,22 @@ $conn->close();
         }
     </style>
 </head>
-<body>
 
+<header>
+    <a href="/">
+        <img src="/bankofcrunch_logoV4.svg" alt="Bank of Crunch Logo" class="logo-image">
+    </a>
+</header>
+
+<nav class="nav1">
+</nav>
+<nav class="nav2">
+</nav>
+
+<body>
 <div class="bg">
     <div class="login-container">
-
-        <h1>Bank of Crunch</h1>
-
+        <h1>Log In to Online Banking</h1>
         <!-- Login form -->
         <form method="post" action="">
             <label for="username">Username:</label>
@@ -148,6 +204,5 @@ $conn->close();
         </form>
     </div>
 </div>
-
 </body>
 </html>
