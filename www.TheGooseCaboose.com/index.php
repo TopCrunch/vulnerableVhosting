@@ -109,7 +109,7 @@ $conn->close();
                         <button type="submit">Login</button>
                     </form>
                 </div>
-                <img src="./camping_photo_V2.svg" alt="photo of a camper" class="main-image"/>
+                <img src="./camping_photo_V2.jpg" alt="photo of a camper" class="main-image"/>
             </div>
         </div>
     </section>
