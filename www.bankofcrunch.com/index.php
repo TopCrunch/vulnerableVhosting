@@ -164,7 +164,7 @@
                     // Redirect or include another page here
                     echo "<p>Login successful! Redirecting...</p>";
                     // Redirect to another page or include it here
-                    // header("Location: home.php"); // Uncomment to redirect
+		            header("Location: account_overview.php"); // Uncomment to redirect
                 } else {
                     echo "<p>Wrong username/password</p>";
                 }
@@ -185,4 +185,3 @@
 </div>
 </body>
 </html>
-
