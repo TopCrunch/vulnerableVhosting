@@ -50,11 +50,15 @@
             text-decoration: none;
             font-weight: bold;
         }
+        .logo-image {
+            max-width: 200px; /* Adjust this value as needed */
+            height: auto; /* Keep the aspect ratio */
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Bank of Crunch - Account Overview</h1>
+        <h1><img src="/bankofcrunch_logoV4.svg" alt="Bank of Crunch Logo" class="logo-image"></h1>
     </div>
 
     <div class="content">
