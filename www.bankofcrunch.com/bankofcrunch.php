@@ -1,48 +1,4 @@
-
-<?php
-/*
-// Start the session
-session_start();
-
-// Database connection
-$servername = "localhost";
-$username = "your_username";
-$password = "your_password";
-$dbname = "your_database";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check the connection
-if ($conn->connect_error) {
-    echo "Connection failed. Please try again later.";
-} else {
-    echo "Connected successfully.";
-}
-
-// Validate user login
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    // Direct SQL query (vulnerable to SQL injection)
-    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        echo "Login successful!";
-        // Additional logic for a successful login
-    } else {
-        echo "Login failed. User not found or invalid password.";
-    }
-}
-
-// Close the database connection
-$conn->close();
-
-*/
-?>
-
-
+/* Updated with harcoded credntials */
 
 <!DOCTYPE html>
 <html lang="en">
@@ -178,7 +134,7 @@ $conn->close();
 </head>
 
 <header>
-    <a href="/">
+<a href="/">
         <img src="/bankofcrunch_logoV4.svg" alt="Bank of Crunch Logo" class="logo-image">
     </a>
 </header>
@@ -192,6 +148,29 @@ $conn->close();
 <div class="bg">
     <div class="login-container">
         <h1>Log In to Online Banking</h1>
+        <?php
+        session_start();
+        // Hardcoded credentials
+        $hardcoded_username = "admin";
+        $hardcoded_password = "password123";
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST['username']) && isset($_POST['password'])) {
+                // Check if credentials match hardcoded values
+                if ($_POST['username'] == $hardcoded_username && $_POST['password'] == $hardcoded_password) {
+                    $_SESSION['logged_in'] = 1;
+                    // Set a role if needed, for now hardcoded as 'user'
+                    $_SESSION['role'] = 'user';
+                    // Redirect or include another page here
+                    echo "<p>Login successful! Redirecting...</p>";
+                    // Redirect to another page or include it here
+                    // header("Location: home.php"); // Uncomment to redirect
+                } else {
+                    echo "<p>Wrong username/password</p>";
+                }
+            }
+        }
+        ?>
         <!-- Login form -->
         <form method="post" action="">
             <label for="username">Username:</label>
@@ -206,3 +185,4 @@ $conn->close();
 </div>
 </body>
 </html>
+
