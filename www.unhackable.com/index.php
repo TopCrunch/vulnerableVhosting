@@ -26,97 +26,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login Page</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #3498db, #e74c3c);
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      color: #fff;
-    }
-
-    form {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      text-align: left;
-      /* Center the form */
-    }
-
-    h2 {
-      color: #000;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: #333;
-      /* Darker text color */
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      box-sizing: border-box;
-      background-color: #f7f7f7;
-      /* Light gray background */
-      border: 1px solid #ddd;
-      /* Border color */
-      border-radius: 3px;
-      /* Rounded corners */
-    }
-
-    input[type="submit"] {
-      background-color: #4caf50;
-      color: white;
-      cursor: pointer;
-    }
-
-    p {
-      margin-top: 10px;
-      color: #333;
-      /* Darker text color */
-    }
-
-    .error-message {
-      color: red;
-      margin-top: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
+<nav>
+  <div class="logo-image">
+    <img src="./unhackable_logo_V3.svg" alt="unhackable logo"/>
+  </div>
+</nav>
+
 <body>
+  <section class="main">
+      <div class="login-container">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);">
+          <h2>Login</h2>
 
-  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-    <h2>Login</h2>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
 
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+          <input type="submit" value="Login">
 
-    <input type="submit" value="Login">
+          <!-- Display error message if login fails -->
+          <p class="error-message"><?php echo $error_message; ?></p>
 
-    <!-- Display error message if login fails -->
-    <p class="error-message"><?php echo $error_message; ?></p>
-
-    <p>Don't have an account? <a href="#">Sign up</a></p>
-  </form>
-
+          <p>Don't have an account? <a href="#">Sign up</a></p>
+        </form>
+      </div>
+  </section>
 </body>
 
 </html>
