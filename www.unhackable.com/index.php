@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <nav>
   <div class="logo-image">
-    <img src="./unhackable_logo_V3.svg" alt="unhackable logo"/>
+    <img src="./unhackable_logo_V3.png" alt="unhackable logo"/>
   </div>
 </nav>
 
