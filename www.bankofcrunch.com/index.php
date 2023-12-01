@@ -151,8 +151,8 @@
         <?php
         session_start();
         // Hardcoded credentials
-        $hardcoded_username = "admin";
-        $hardcoded_password = "password123";
+        $hardcoded_username = "moneybags";
+        $hardcoded_password = "fatstacks123";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($_POST['username']) && isset($_POST['password'])) {
