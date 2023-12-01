@@ -97,7 +97,7 @@ $conn->close();
                     available for members only.
                 </p>
                 <div class="logins">
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                         <label for="username">Username:</label>
                         <input type="text" name="username" required>
 
